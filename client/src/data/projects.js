@@ -42,7 +42,7 @@ export const projects = [
     accent: "from-sky-500/30 to-cyan-500/10",
     image: "/tourism.png",
     icon: "Plane",
-    liveUrl: "",
+    liveUrl: "https://tourism-landing-fz4z.vercel.app/",
     repoUrl: "",
     featured: true,
   },
