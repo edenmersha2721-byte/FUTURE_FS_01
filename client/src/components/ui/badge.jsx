@@ -1,0 +1,32 @@
+import * as React from "react";
+import { cva } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+
+const badgeVariants = cva(
+  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-medium transition-colors",
+  {
+    variants: {
+      variant: {
+        default: "border-transparent bg-white/[0.06] text-foreground/80",
+        outline: "border-white/15 text-foreground/70",
+        accent:
+          "border-indigo-500/30 bg-indigo-500/10 text-indigo-300",
+        success:
+          "border-emerald-500/30 bg-emerald-500/10 text-emerald-300",
+        warning:
+          "border-amber-500/30 bg-amber-500/10 text-amber-300",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  }
+);
+
+function Badge({ className, variant, ...props }) {
+  return (
+    <div className={cn(badgeVariants({ variant }), className)} {...props} />
+  );
+}
+
+export { Badge, badgeVariants };
