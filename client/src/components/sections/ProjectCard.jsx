@@ -93,9 +93,17 @@ export default function ProjectCard({ project }) {
       <div className="flex flex-1 flex-col p-6">
         <h3 className="text-lg font-semibold tracking-tight">{title}</h3>
         <p className="mt-0.5 text-sm font-medium text-indigo-300/90">{tagline}</p>
-        <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">
-          {description}
-        </p>
+
+        {/* Problem solved */}
+        <div className="mt-3 flex flex-1 flex-col rounded-xl border border-white/10 bg-white/[0.02] p-4">
+          <span className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-amber-400/90">
+            <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
+            Problem Solved
+          </span>
+          <p className="mt-2 text-sm italic leading-relaxed text-muted-foreground">
+            &ldquo;{description}&rdquo;
+          </p>
+        </div>
 
         {/* Tags */}
         <div className="mt-4 flex flex-wrap gap-1.5">
