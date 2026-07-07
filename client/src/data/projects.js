@@ -33,6 +33,20 @@ export const projects = [
     featured: true,
   },
   {
+    title: "Lead Management CRM",
+    tagline: "CRM for tracking sales leads",
+    description:
+      "Sales teams lose track of leads across scattered spreadsheets and inboxes, and opportunities slip away. This CRM centralizes every lead, tracks its status through the pipeline and gives a clear overview of each prospect — so nothing falls through the cracks.",
+    tags: ["React", "Tailwind CSS", "JavaScript"],
+    status: "live",
+    accent: "from-blue-500/30 to-sky-500/10",
+    image: "/crm.png",
+    icon: "Users",
+    liveUrl: "https://future-fs-02-ashy-three.vercel.app/",
+    repoUrl: "",
+    featured: true,
+  },
+  {
     title: "Plant Disease Detector",
     tagline: "AI-powered plant disease detection",
     description:
@@ -84,7 +98,7 @@ export const projects = [
     accent: "from-blue-500/30 to-blue-600/10",
     image: "/portfolio.png",
     icon: "LayoutDashboard",
-    liveUrl: "",
+    liveUrl: "https://portofolio-git-main-edens-projects-bf15da23.vercel.app/",
     repoUrl: "",
     featured: true,
   },
