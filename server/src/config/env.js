@@ -25,8 +25,14 @@ export const env = {
 
   mail: {
     user: process.env.MAIL_USER || "",
-    pass: process.env.MAIL_PASS || "",
+    // strip accidental spaces (Gmail shows App Passwords as "xxxx xxxx xxxx xxxx")
+    pass: (process.env.MAIL_PASS || "").replace(/\s+/g, ""),
     to: process.env.MAIL_TO || process.env.MAIL_USER || "",
+    // Optional explicit SMTP settings (any provider: Brevo, Mailtrap, etc.).
+    // If SMTP_HOST is set, it takes priority over the Gmail service shortcut.
+    host: process.env.SMTP_HOST || "",
+    port: Number(process.env.SMTP_PORT) || 587,
+    secure: String(process.env.SMTP_SECURE).toLowerCase() === "true",
   },
 };
 

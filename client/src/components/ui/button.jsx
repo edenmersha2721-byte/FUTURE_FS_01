@@ -31,14 +31,23 @@ const buttonVariants = cva(
 );
 
 const Button = React.forwardRef(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = "button";
+  ({ className, variant, size, asChild = false, children, ...props }, ref) => {
+    const classes = cn(buttonVariants({ variant, size, className }));
+
+    // When asChild is set, render the single child element (e.g. <a> / <Link>)
+    // with the button styles merged onto it — so links behave like links.
+    if (asChild && React.isValidElement(children)) {
+      return React.cloneElement(children, {
+        className: cn(classes, children.props.className),
+        ref,
+        ...props,
+      });
+    }
+
     return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
+      <button className={classes} ref={ref} {...props}>
+        {children}
+      </button>
     );
   }
 );

@@ -2,7 +2,9 @@ import nodemailer from "nodemailer";
 import { env, isMailConfigured } from "../config/env.js";
 
 /**
- * Lazily-created Nodemailer transport using Gmail SMTP.
+ * Lazily-created Nodemailer transport.
+ * - If SMTP_HOST is set, uses that provider (Brevo, Mailtrap, SendGrid, …).
+ * - Otherwise falls back to the Gmail service shortcut (needs an App Password).
  * Returns null when mail credentials are not configured.
  */
 let transporter = null;
@@ -11,13 +13,19 @@ function getTransporter() {
   if (!isMailConfigured) return null;
   if (transporter) return transporter;
 
-  transporter = nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: env.mail.user,
-      pass: env.mail.pass,
-    },
-  });
+  const config = env.mail.host
+    ? {
+        host: env.mail.host,
+        port: env.mail.port,
+        secure: env.mail.secure, // true for 465, false for 587
+        auth: { user: env.mail.user, pass: env.mail.pass },
+      }
+    : {
+        service: "gmail",
+        auth: { user: env.mail.user, pass: env.mail.pass },
+      };
+
+  transporter = nodemailer.createTransport(config);
   return transporter;
 }
 
