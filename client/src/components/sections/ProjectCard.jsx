@@ -96,11 +96,7 @@ export default function ProjectCard({ project }) {
 
         {/* Problem solved */}
         <div className="mt-3 flex flex-1 flex-col rounded-xl border border-white/10 bg-white/[0.02] p-4">
-          <span className="flex items-center gap-2 text-xs font-semibold uppercase tracking-widest text-amber-400/90">
-            <span className="h-1.5 w-1.5 rounded-full bg-amber-400" />
-            Problem Solved
-          </span>
-          <p className="mt-2 text-sm italic leading-relaxed text-muted-foreground">
+          <p className="text-sm italic leading-relaxed text-muted-foreground">
             &ldquo;{description}&rdquo;
           </p>
         </div>
