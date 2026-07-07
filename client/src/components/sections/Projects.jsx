@@ -19,12 +19,7 @@ export default function Projects() {
             subtitle="A selection of projects that show how I turn ideas into clean, working software — from AI tools to polished front-ends."
           />
           <Reveal delay={0.1}>
-            <Button asChild variant="outline">
-              <a href="#about">
-                More about my work <ArrowRight className="size-4" />
-              </a>
-            </Button>
-          </Reveal>
+                   </Reveal>
         </div>
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

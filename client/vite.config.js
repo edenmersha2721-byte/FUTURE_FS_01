@@ -1,8 +1,6 @@
 import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
-
-// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
   resolve: {
@@ -12,8 +10,7 @@ export default defineConfig({
   },
   server: {
     port: 5173,
-    // Proxy API calls to the Node/Express backend during development
-    proxy: {
+       proxy: {
       "/api": {
         target: "http://localhost:5000",
         changeOrigin: true,

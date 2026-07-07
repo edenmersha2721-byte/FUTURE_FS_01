@@ -46,7 +46,6 @@
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 
   /* Custom scrollbar */
@@ -72,9 +71,9 @@
 }
 
 @layer components {
-  /* Gradient text accent */
+  /* Solid accent for highlighted words (flattened, no gradient) */
   .text-gradient {
-    @apply bg-gradient-to-r from-blue-400 via-indigo-400 to-violet-500 bg-clip-text text-transparent;
+    @apply text-blue-400;
   }
 
   /* Glassmorphism card */
@@ -96,36 +95,17 @@
 }
 
 @layer utilities {
-  /* Radial glow used behind hero elements */
+  /* Subtle radial glow behind hero elements (toned down) */
   .glow-radial {
     background: radial-gradient(
       600px circle at center,
-      hsl(245 80% 60% / 0.18),
+      hsl(217 60% 55% / 0.07),
       transparent 70%
     );
   }
 
+  /* Plain hairline border helper (kept for API compatibility) */
   .gradient-border {
     position: relative;
-    background-clip: padding-box;
-  }
-  .gradient-border::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(
-      135deg,
-      hsl(217 91% 60% / 0.6),
-      hsl(245 80% 64% / 0.2),
-      transparent
-    );
-    -webkit-mask:
-      linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
   }
 }

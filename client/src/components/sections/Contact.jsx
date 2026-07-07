@@ -5,14 +5,10 @@ import {
   Clock,
   Send,
   MessageSquare,
-  Github,
-  Linkedin,
   CheckCircle2,
   AlertCircle,
   Loader2,
-  GraduationCap,
 } from "lucide-react";
-import { FaInstagram, FaTelegramPlane } from "react-icons/fa";
 import SectionHeading from "@/components/shared/SectionHeading";
 import Reveal from "@/components/shared/Reveal";
 import { Button } from "@/components/ui/button";
@@ -72,7 +68,7 @@ export default function Contact() {
           eyebrow="Get In Touch"
           title="Let's build something"
           highlight="amazing together"
-          subtitle="Have a project in mind, an internship opportunity, or just want to say hello? Fill out the form and I'll get back to you soon."
+          subtitle="Have a project in mind, an opportunity to discuss, or just want to say hello? Fill out the form and I'll get back to you soon."
           align="center"
         />
 
@@ -83,7 +79,7 @@ export default function Contact() {
               <Card className="p-6">
                 <h3 className="font-semibold">Contact details</h3>
                 <p className="mt-1 text-sm text-muted-foreground">
-                  Prefer email or socials? Reach me directly.
+                  Prefer email? Reach me directly.
                 </p>
                 <div className="mt-6 space-y-4">
                   <ContactRow
@@ -98,40 +94,14 @@ export default function Contact() {
                     value={site.location}
                   />
                   <ContactRow
-                    icon={GraduationCap}
-                    label="Currently"
-                    value="Grade 12 · INSA Dev Program"
-                  />
-                  <ContactRow
                     icon={Clock}
                     label="Availability"
-                    value="Open for internships"
+                    value="Available for work"
                   />
-                </div>
-
-                <div className="mt-6 border-t border-white/10 pt-5">
-                  <p className="text-sm font-medium">Connect with me</p>
-                  <div className="mt-3 flex gap-3">
-                    <SocialIcon href={site.socials.github} label="GitHub">
-                      <Github className="size-4" />
-                    </SocialIcon>
-                    <SocialIcon href={site.socials.linkedin} label="LinkedIn">
-                      <Linkedin className="size-4" />
-                    </SocialIcon>
-                    <SocialIcon href={site.socials.instagram} label="Instagram">
-                      <FaInstagram className="size-4" />
-                    </SocialIcon>
-                    <SocialIcon href={site.socials.telegram} label="Telegram">
-                      <FaTelegramPlane className="size-4" />
-                    </SocialIcon>
-                    <SocialIcon href={site.socials.email} label="Email">
-                      <Mail className="size-4" />
-                    </SocialIcon>
-                  </div>
                 </div>
               </Card>
 
-              <Card className="flex items-center gap-4 bg-gradient-to-br from-indigo-600/15 to-violet-700/10 p-6">
+              <Card className="flex items-center gap-4 bg-white/[0.03] p-6">
                 <span className="relative flex h-3 w-3">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                   <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-400" />
@@ -151,7 +121,7 @@ export default function Contact() {
           <Reveal delay={0.1}>
             <Card className="p-6 md:p-8">
               <div className="flex items-center gap-3">
-                <span className="grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br from-blue-500/20 to-violet-600/20 text-indigo-300">
+                <span className="grid h-11 w-11 place-items-center rounded-xl bg-blue-500/10 text-blue-300">
                   <MessageSquare className="size-5" />
                 </span>
                 <div>
@@ -251,7 +221,7 @@ function Field({ label, htmlFor, children }) {
 function ContactRow({ icon: Icon, label, value, href }) {
   const content = (
     <div className="flex items-center gap-3">
-      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-indigo-300">
+      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-blue-300">
         <Icon className="size-4" />
       </span>
       <div className="leading-tight">
@@ -266,20 +236,6 @@ function ContactRow({ icon: Icon, label, value, href }) {
     </a>
   ) : (
     content
-  );
-}
-
-function SocialIcon({ href, label, children }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer noopener"
-      aria-label={label}
-      className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-indigo-500/40 hover:text-foreground"
-    >
-      {children}
-    </a>
   );
 }
 

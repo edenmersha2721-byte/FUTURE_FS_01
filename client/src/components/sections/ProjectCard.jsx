@@ -92,7 +92,7 @@ export default function ProjectCard({ project }) {
       {/* Body */}
       <div className="flex flex-1 flex-col p-6">
         <h3 className="text-lg font-semibold tracking-tight">{title}</h3>
-        <p className="mt-0.5 text-sm font-medium text-indigo-300/90">{tagline}</p>
+        <p className="mt-0.5 text-sm font-medium text-blue-300/90">{tagline}</p>
 
         {/* Problem solved */}
         <div className="mt-3 flex flex-1 flex-col rounded-xl border border-white/10 bg-white/[0.02] p-4">
@@ -121,7 +121,7 @@ export default function ProjectCard({ project }) {
               href={liveUrl}
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-indigo-300"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-blue-300"
             >
               <ExternalLink className="size-4" /> Live Demo
             </a>

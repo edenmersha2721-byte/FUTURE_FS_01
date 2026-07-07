@@ -68,7 +68,7 @@ export default function Hero() {
               className="mt-4 text-lg font-medium text-foreground/90 sm:text-xl"
             >
               Full-Stack Developer{" "}
-              <span className="text-muted-foreground">|</span> Grade 12 Student
+              <span className="text-muted-foreground"></span>
             </motion.p>
 
             <motion.p
@@ -138,17 +138,10 @@ export default function Hero() {
               className="relative mx-auto grid w-fit place-items-center"
             >
               {/* soft ambient glow */}
-              <div className="absolute -inset-8 rounded-full bg-gradient-to-br from-blue-500/40 via-indigo-500/25 to-violet-600/40 blur-3xl" />
+              <div className="absolute -inset-8 rounded-full bg-blue-600/15 blur-3xl" />
 
-              {/* slow-rotating gradient ring */}
-              <motion.div
-                animate={{ rotate: 360 }}
-                transition={{ duration: 28, repeat: Infinity, ease: "linear" }}
-                className="absolute -inset-4 rounded-full border-2 border-dashed border-white/15"
-              />
-
-              {/* gradient border + portrait */}
-              <div className="relative rounded-full bg-gradient-to-br from-blue-500 via-indigo-500 to-violet-600 p-[3px] shadow-2xl shadow-violet-700/30">
+              {/* solid ring + portrait */}
+              <div className="relative rounded-full bg-blue-600 p-[3px] shadow-xl shadow-blue-900/30">
                 <div className="rounded-full bg-background p-1.5">
                   <img
                     src={site.photo}
@@ -188,7 +181,7 @@ function Social({ href, label, children }) {
       target="_blank"
       rel="noreferrer noopener"
       aria-label={label}
-      className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-indigo-500/40 hover:text-foreground"
+      className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-blue-500/40 hover:text-foreground"
     >
       {children}
     </a>

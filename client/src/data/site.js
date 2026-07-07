@@ -6,7 +6,7 @@ export const site = {
   name: "Eden Mersha",
   initials: "EM",
   role: "Full-Stack Developer",
-  tagline: "Full-Stack Developer | Grade 12 Student",
+  tagline: "Full-Stack Developer",
   email: "edenmersha2721@gmail.com",
   school: "Etege Menen Girls Boarding Secondary School",
   location: "Addis Ababa, Ethiopia",
@@ -23,9 +23,8 @@ export const site = {
 
 export const navLinks = [
   { label: "Home", to: "/#home" },
-  { label: "About", to: "/#about" },
-  { label: "Skills", to: "/#skills" },
   { label: "Projects", to: "/#projects" },
+  { label: "Skills", to: "/#skills" },
   { label: "Certificates", to: "/#certificates" },
   { label: "Contact", to: "/#contact" },
 ];

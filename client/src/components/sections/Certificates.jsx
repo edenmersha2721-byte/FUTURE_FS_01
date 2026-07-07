@@ -36,7 +36,7 @@ export default function Certificates() {
         <SectionHeading
           eyebrow="Achievements"
           title="Certificates &"
-          highlight="recognition"
+          highlight="Recognition"
           subtitle="Programs, training and milestones along my journey. Click any certificate to view it in full size."
           align="center"
         />
@@ -76,7 +76,7 @@ export default function Certificates() {
                         </div>
                       </>
                     ) : (
-                      <div className="grid h-full place-items-center bg-gradient-to-br from-indigo-600/15 to-violet-700/10">
+                      <div className="grid h-full place-items-center bg-white/[0.03]">
                         <div className="flex flex-col items-center gap-2 text-muted-foreground">
                           <FileImage className="size-8" />
                           <span className="text-xs">Add image in /certificates</span>
@@ -100,7 +100,7 @@ export default function Certificates() {
                       <BadgeCheck className="mt-0.5 size-4 shrink-0 text-emerald-400" />
                       {cert.title}
                     </h3>
-                    <p className="mt-1 text-sm font-medium text-indigo-300/90">
+                    <p className="mt-1 text-sm font-medium text-blue-300/90">
                       {cert.issuer}
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -148,7 +148,7 @@ export default function Certificates() {
                 />
                 <div className="border-t border-white/10 p-4">
                   <p className="font-semibold">{active.title}</p>
-                  <p className="text-sm text-indigo-300/90">
+                  <p className="text-sm text-blue-300/90">
                     {active.issuer} · {active.year}
                   </p>
                 </div>

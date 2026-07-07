@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import Navbar from "@/components/layout/Navbar";
-import Footer from "@/components/layout/Footer";
 import ScrollToTop from "@/components/layout/ScrollToTop";
 import AmbientBackground from "@/components/shared/AmbientBackground";
 import Home from "@/pages/Home";
@@ -19,8 +18,6 @@ export default function App() {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
-
-      <Footer />
     </div>
   );
 }

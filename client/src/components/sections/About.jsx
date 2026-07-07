@@ -4,19 +4,15 @@ import {
   Lightbulb,
   Rocket,
   Compass,
-  GraduationCap,
-  Code2,
   Layers,
   Server,
   Quote,
-  MapPin,
   CheckCircle2,
 } from "lucide-react";
 import SectionHeading from "@/components/shared/SectionHeading";
 import Reveal from "@/components/shared/Reveal";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { site } from "@/data/site";
 
 const values = [
   {
@@ -60,7 +56,7 @@ const journey = [
   {
     phase: "Now",
     title: "Scalable Systems & Microservices",
-    text: "Exploring microservices and system design through the INSA weekend program and hands-on internship projects.",
+    text: "Exploring microservices and system design through hands-on, real-world projects.",
   },
 ];
 
@@ -76,77 +72,37 @@ export default function About() {
     <section id="about" className="scroll-mt-24 py-20 md:py-28">
       <div className="container">
         {/* Intro */}
-        <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr]">
-          <div>
-            <span className="eyebrow">
-              <span className="h-1.5 w-1.5 rounded-full bg-indigo-400" />
-              About Me
-            </span>
-            <h2 className="mt-6 font-display text-3xl font-extrabold leading-[1.1] tracking-tight sm:text-4xl md:text-[2.6rem]">
-              Building digital solutions that{" "}
-              <span className="text-gradient">make an impact</span>
-            </h2>
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
-              <p>
-                I&apos;m <span className="font-medium text-foreground">Eden Mersha</span>,
-                a passionate full-stack developer and a Grade 12 student at{" "}
-                <span className="font-medium text-foreground">{site.school}</span>.
-                I love turning ideas into clean, efficient and user-friendly web
-                applications.
-              </p>
-              <p>
-                Alongside school, I take part in the{" "}
-                <span className="font-medium text-foreground">
-                  INSA weekend development program
-                </span>{" "}
-                and participate in a software development internship — real
-                environments where I sharpen my engineering skills and ship
-                practical projects.
-              </p>
-            </div>
-
-            {/* Quote */}
-            <div className="mt-8 flex gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-              <Quote className="size-6 shrink-0 text-indigo-400" />
-              <p className="text-sm italic leading-relaxed text-foreground/90">
-                I believe in writing clean code, creating seamless user
-                experiences, and building solutions that are both functional and
-                meaningful.
-              </p>
-            </div>
+        <div className="max-w-3xl">
+          <span className="eyebrow">
+            <span className="h-1.5 w-1.5 rounded-full bg-blue-400" />
+            About Me
+          </span>
+          <h2 className="mt-6 font-display text-3xl font-extrabold leading-[1.1] tracking-tight sm:text-4xl md:text-[2.6rem]">
+            Building digital solutions that{" "}
+            <span className="text-gradient">make an impact</span>
+          </h2>
+          <div className="mt-6 space-y-4 text-base leading-relaxed text-muted-foreground">
+            <p>
+              I&apos;m <span className="font-medium text-foreground">Eden Mersha</span>,
+              a passionate full-stack developer. I love turning ideas into
+              clean, efficient and user-friendly web applications.
+            </p>
+            <p>
+              I focus on building real, practical projects — sharpening my
+              engineering skills across the full stack, from clean front-ends
+              to reliable, well-structured back-ends.
+            </p>
           </div>
 
-          {/* Profile card */}
-          <Reveal y={32}>
-            <div className="glass gradient-border relative overflow-hidden rounded-3xl p-7">
-              <div className="absolute inset-0 glow-radial" />
-              <div className="relative">
-                <div className="flex items-center gap-4">
-                  <img
-                    src={site.photo}
-                    alt={site.name}
-                    className="h-16 w-16 rounded-full object-cover object-top ring-2 ring-white/15"
-                  />
-                  <div>
-                    <p className="text-lg font-semibold">{site.name}</p>
-                    <p className="text-sm text-indigo-300/90">{site.role}</p>
-                  </div>
-                </div>
-
-                <div className="mt-6 space-y-3 text-sm">
-                  <InfoRow icon={GraduationCap} label="Grade 12 Student" />
-                  <InfoRow icon={Code2} label="INSA Weekend Dev Program" />
-                  <InfoRow icon={MapPin} label={site.location} />
-                </div>
-
-                <div className="mt-6 grid grid-cols-3 gap-3">
-                  <MiniStat value="5+" label="Projects" />
-                  <MiniStat value="8+" label="Technologies" />
-                  <MiniStat value="∞" label="Learning" />
-                </div>
-              </div>
-            </div>
-          </Reveal>
+          {/* Quote */}
+          <div className="mt-8 flex gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+            <Quote className="size-6 shrink-0 text-blue-400" />
+            <p className="text-sm italic leading-relaxed text-foreground/90">
+              I believe in writing clean code, creating seamless user
+              experiences, and building solutions that are both functional and
+              meaningful.
+            </p>
+          </div>
         </div>
 
         {/* Values */}
@@ -154,7 +110,7 @@ export default function About() {
           {values.map((v, i) => (
             <Reveal key={v.title} delay={i * 0.06}>
               <Card className="flex h-full gap-4 p-6 transition-all hover:-translate-y-1 hover:border-white/20">
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-blue-500/20 to-violet-600/20 text-indigo-300">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-blue-500/10 text-blue-300">
                   <v.icon className="size-6" />
                 </span>
                 <div>
@@ -179,7 +135,7 @@ export default function About() {
           />
 
           <div className="relative mx-auto mt-14 max-w-3xl">
-            <div className="absolute left-4 top-2 h-full w-px bg-gradient-to-b from-indigo-500/60 via-violet-500/30 to-transparent md:left-1/2" />
+            <div className="absolute left-4 top-2 h-full w-px bg-gradient-to-b from-blue-500/40 to-transparent md:left-1/2" />
             <div className="space-y-10">
               {journey.map((step, i) => (
                 <Reveal key={step.title} delay={i * 0.05}>
@@ -188,8 +144,8 @@ export default function About() {
                       i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                     }`}
                   >
-                    <span className="absolute left-4 top-1.5 z-10 grid h-8 w-8 -translate-x-1/2 place-items-center rounded-full border border-white/15 bg-background text-indigo-300 md:left-1/2">
-                      <span className="h-2.5 w-2.5 rounded-full bg-gradient-to-br from-blue-400 to-violet-500" />
+                    <span className="absolute left-4 top-1.5 z-10 grid h-8 w-8 -translate-x-1/2 place-items-center rounded-full border border-white/15 bg-background text-blue-300 md:left-1/2">
+                      <span className="h-2.5 w-2.5 rounded-full bg-blue-500" />
                     </span>
 
                     <div className="ml-12 md:ml-0 md:w-1/2">
@@ -227,8 +183,8 @@ export default function About() {
                     engineer.
                   </p>
                   <div className="mt-6 flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
-                    <Layers className="size-6 text-indigo-400" />
-                    <Server className="size-6 text-violet-400" />
+                    <Layers className="size-6 text-blue-400" />
+                    <Server className="size-6 text-blue-400" />
                     <p className="text-sm text-muted-foreground">
                       Focused on scalable systems & microservices.
                     </p>
@@ -256,23 +212,5 @@ export default function About() {
         </div>
       </div>
     </section>
-  );
-}
-
-function InfoRow({ icon: Icon, label }) {
-  return (
-    <div className="flex items-center gap-3 text-muted-foreground">
-      <Icon className="size-4 text-indigo-400" />
-      <span className="text-foreground/90">{label}</span>
-    </div>
-  );
-}
-
-function MiniStat({ value, label }) {
-  return (
-    <div className="rounded-xl border border-white/10 bg-white/[0.03] p-3 text-center">
-      <p className="font-display text-xl font-bold text-gradient">{value}</p>
-      <p className="mt-1 text-xs text-muted-foreground">{label}</p>
-    </div>
   );
 }

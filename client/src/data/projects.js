@@ -5,6 +5,34 @@
  */
 export const projects = [
   {
+    title: "PharmaHub",
+    tagline: "Healthcare platform (in progress)",
+    description:
+      "Patients waste time calling around to find which pharmacy actually has their medicine in stock. PharmaHub (work in progress) lets users search a medicine and instantly locate the nearest pharmacies that have it, with real-time inventory.",
+    tags: ["React", "Spring Boot", "PostgreSQL", "Tailwind CSS", "Docker"],
+    status: "wip",
+    accent: "from-amber-500/30 to-orange-500/10",
+    image: "/pharmahub.png",
+    icon: "HeartPulse",
+    liveUrl: "",
+    repoUrl: "",
+    featured: true,
+  },
+  {
+    title: "E-Prescription System",
+    tagline: "Digital prescriptions for hospitals",
+    description:
+      "Handwritten prescriptions are easy to forge and hard for pharmacies to trust. This system lets hospitals issue secure online prescriptions and powers PharmaHub's validation — so pharmacies can confirm an uploaded prescription is genuine before dispensing.",
+    tags: ["React", "Spring Boot", "PostgreSQL", "Tailwind CSS"],
+    status: "wip",
+    accent: "from-sky-500/30 to-blue-600/10",
+    image: "/Hospital.png",
+    icon: "ClipboardPlus",
+    liveUrl: "",
+    repoUrl: "",
+    featured: true,
+  },
+  {
     title: "Plant Disease Detector",
     tagline: "AI-powered plant disease detection",
     description:
@@ -53,23 +81,9 @@ export const projects = [
       "Recruiters and clients need one professional place to see my skills, projects and reach me directly. This portfolio showcases my work and routes every contact message to a real Node.js + PostgreSQL backend.",
     tags: ["React", "Node.js", "PostgreSQL", "Tailwind CSS"],
     status: "live",
-    accent: "from-indigo-500/30 to-violet-500/10",
+    accent: "from-blue-500/30 to-blue-600/10",
     image: "/portfolio.png",
     icon: "LayoutDashboard",
-    liveUrl: "",
-    repoUrl: "",
-    featured: true,
-  },
-  {
-    title: "PharmaHub",
-    tagline: "Healthcare platform (in progress)",
-    description:
-      "Patients waste time calling around to find which pharmacy actually has their medicine in stock. PharmaHub (work in progress) lets users search a medicine and instantly locate the nearest pharmacies that have it, with real-time inventory.",
-    tags: ["React", "Spring Boot", "PostgreSQL", "Tailwind CSS", "Docker"],
-    status: "wip",
-    accent: "from-amber-500/30 to-orange-500/10",
-    image: "/pharmahub.png",
-    icon: "HeartPulse",
     liveUrl: "",
     repoUrl: "",
     featured: true,

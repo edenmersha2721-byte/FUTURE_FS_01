@@ -62,7 +62,7 @@ export default function Navbar() {
         >
           {/* Brand */}
           <Link to="/" className="flex items-center gap-3">
-            <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-blue-500 to-violet-600 text-sm font-bold text-white shadow-lg shadow-violet-600/30">
+            <span className="grid h-10 w-10 place-items-center rounded-xl bg-blue-600 text-sm font-bold text-white shadow-lg shadow-blue-600/30">
               {site.initials}
             </span>
             <span className="flex flex-col leading-none">
