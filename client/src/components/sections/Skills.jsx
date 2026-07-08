@@ -26,9 +26,9 @@ export default function Skills() {
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {skillGroups.map((group, gi) => (
             <Reveal key={group.category} delay={gi * 0.08}>
-              <Card className="h-full p-6 transition-all hover:border-white/20">
+              <Card className="h-full p-6 transition-all hover:border-foreground/20">
                 <div className="flex items-center gap-3">
-                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-blue-500/10 text-blue-300">
+                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-300">
                     <Icon name={group.icon} className="size-5" />
                   </span>
                   <div>
@@ -55,7 +55,7 @@ export default function Skills() {
 
 function SkillRow({ skill }) {
   return (
-    <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-white/[0.02] px-3.5 py-2.5">
+    <div className="flex items-center gap-3 rounded-xl border border-foreground/[0.06] bg-foreground/[0.02] px-3.5 py-2.5">
       <span
         className="grid h-9 w-9 shrink-0 place-items-center rounded-lg"
         style={{ backgroundColor: `${skill.color}1a`, color: skill.color }}

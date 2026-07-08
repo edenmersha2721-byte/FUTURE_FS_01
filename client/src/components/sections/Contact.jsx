@@ -101,7 +101,7 @@ export default function Contact() {
                 </div>
               </Card>
 
-              <Card className="flex items-center gap-4 bg-white/[0.03] p-6">
+              <Card className="flex items-center gap-4 bg-foreground/[0.03] p-6">
                 <span className="relative flex h-3 w-3">
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                   <span className="relative inline-flex h-3 w-3 rounded-full bg-emerald-400" />
@@ -121,7 +121,7 @@ export default function Contact() {
           <Reveal delay={0.1}>
             <Card className="p-6 md:p-8">
               <div className="flex items-center gap-3">
-                <span className="grid h-11 w-11 place-items-center rounded-xl bg-blue-500/10 text-blue-300">
+                <span className="grid h-11 w-11 place-items-center rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-300">
                   <MessageSquare className="size-5" />
                 </span>
                 <div>
@@ -221,7 +221,7 @@ function Field({ label, htmlFor, children }) {
 function ContactRow({ icon: Icon, label, value, href }) {
   const content = (
     <div className="flex items-center gap-3">
-      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-blue-300">
+      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-foreground/10 bg-foreground/[0.03] text-blue-600 dark:text-blue-300">
         <Icon className="size-4" />
       </span>
       <div className="leading-tight">

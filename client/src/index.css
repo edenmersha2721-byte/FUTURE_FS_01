@@ -3,15 +3,45 @@
 @tailwind utilities;
 
 @layer base {
+  /* Light theme (default) */
   :root {
-    /* Dark theme tuned with blue/purple accents (HSL channels for shadcn) */
+    --background: 210 25% 98%;
+    --foreground: 222 32% 12%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 32% 12%;
+
+    --primary: 217 91% 52%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 92%;
+    --secondary-foreground: 222 32% 12%;
+
+    --muted: 210 20% 93%;
+    --muted-foreground: 215 16% 42%;
+
+    --accent: 217 91% 52%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 16% 86%;
+    --input: 220 16% 86%;
+    --ring: 217 91% 52%;
+
+    --radius: 0.9rem;
+  }
+
+  /* Dark theme */
+  .dark {
     --background: 230 35% 5%;
     --foreground: 210 40% 98%;
 
     --card: 230 30% 8%;
     --card-foreground: 210 40% 98%;
 
-    --primary: 245 80% 64%;
+    --primary: 217 91% 60%;
     --primary-foreground: 210 40% 98%;
 
     --secondary: 230 25% 14%;
@@ -28,9 +58,7 @@
 
     --border: 230 20% 16%;
     --input: 230 20% 16%;
-    --ring: 245 80% 64%;
-
-    --radius: 0.9rem;
+    --ring: 217 91% 60%;
   }
 }
 
@@ -48,49 +76,46 @@
     @apply bg-background text-foreground font-sans antialiased;
   }
 
-  /* Custom scrollbar */
+  /* Custom scrollbar (theme-aware) */
   ::-webkit-scrollbar {
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: hsl(230 35% 5%);
+    background: hsl(var(--background));
   }
   ::-webkit-scrollbar-thumb {
-    background: hsl(230 20% 20%);
+    background: hsl(var(--foreground) / 0.2);
     border-radius: 9999px;
-    border: 2px solid hsl(230 35% 5%);
+    border: 2px solid hsl(var(--background));
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(245 60% 45%);
+    background: hsl(var(--foreground) / 0.35);
   }
 
   ::selection {
-    background: hsl(245 80% 64% / 0.3);
-    color: hsl(210 40% 98%);
+    background: hsl(var(--primary) / 0.25);
   }
 }
 
 @layer components {
   /* Solid accent for highlighted words (flattened, no gradient) */
   .text-gradient {
-    @apply text-blue-400;
+    @apply text-blue-600 dark:text-blue-400;
   }
 
-  /* Glassmorphism card */
+  /* Glassmorphism card (adapts to theme via foreground alpha) */
   .glass {
-    @apply border border-white/10 bg-white/[0.03] backdrop-blur-xl;
-    box-shadow:
-      0 1px 0 0 rgba(255, 255, 255, 0.05) inset,
-      0 20px 40px -20px rgba(0, 0, 0, 0.6);
+    @apply border border-foreground/10 bg-foreground/[0.03] backdrop-blur-xl;
+    box-shadow: 0 20px 40px -24px hsl(var(--foreground) / 0.25);
   }
 
   .glass-hover {
-    @apply transition-all duration-300 hover:border-white/20 hover:bg-white/[0.06];
+    @apply transition-all duration-300 hover:border-foreground/20 hover:bg-foreground/[0.06];
   }
 
   /* Section label pill */
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-indigo-300;
+    @apply inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-foreground/[0.04] px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-blue-600 dark:text-blue-300;
   }
 }
 

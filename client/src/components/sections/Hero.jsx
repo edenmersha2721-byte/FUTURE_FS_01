@@ -157,7 +157,7 @@ export default function Hero() {
 
                 {/* availability badge */}
                 <div className="absolute -bottom-2 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap">
-                  <div className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-background/90 px-4 py-2 text-xs font-medium text-foreground shadow-lg backdrop-blur">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background/90 px-4 py-2 text-xs font-medium text-foreground shadow-lg backdrop-blur">
                     <span className="relative flex h-2 w-2">
                       <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                       <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
@@ -181,7 +181,7 @@ function Social({ href, label, children }) {
       target="_blank"
       rel="noreferrer noopener"
       aria-label={label}
-      className="grid h-11 w-11 place-items-center rounded-xl border border-white/10 bg-white/[0.03] text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-blue-500/40 hover:text-foreground"
+      className="grid h-11 w-11 place-items-center rounded-xl border border-foreground/10 bg-foreground/[0.03] text-muted-foreground transition-all hover:-translate-y-0.5 hover:border-blue-500/40 hover:text-foreground"
     >
       {children}
     </a>
@@ -194,7 +194,7 @@ function OrbitBadge({ icon: Icon, label, color, className, delay }) {
       animate={{ y: [0, -8, 0] }}
       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay }}
       className={cn(
-        "absolute z-10 hidden items-center gap-2 rounded-full border border-white/10 bg-background/80 px-3 py-2 text-xs font-medium text-foreground shadow-lg backdrop-blur sm:flex",
+        "absolute z-10 hidden items-center gap-2 rounded-full border border-foreground/10 bg-background/80 px-3 py-2 text-xs font-medium text-foreground shadow-lg backdrop-blur sm:flex",
         className
       )}
     >

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import ThemeToggle from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 import { site, navLinks } from "@/data/site";
 
@@ -85,8 +86,9 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA + mobile toggle */}
+          {/* CTA + theme + mobile toggle */}
           <div className="flex items-center gap-2">
+            <ThemeToggle />
             <Button
               asChild
               size="sm"
@@ -100,7 +102,7 @@ export default function Navbar() {
             <button
               aria-label="Toggle menu"
               onClick={() => setOpen((v) => !v)}
-              className="grid h-10 w-10 place-items-center rounded-xl border border-white/10 bg-white/[0.04] text-foreground lg:hidden"
+              className="grid h-10 w-10 place-items-center rounded-xl border border-foreground/10 bg-foreground/[0.04] text-foreground lg:hidden"
             >
               {open ? <X className="size-5" /> : <Menu className="size-5" />}
             </button>
@@ -116,7 +118,7 @@ export default function Navbar() {
                   key={link.label}
                   to={link.to}
                   onClick={(e) => handleNav(e, link.to)}
-                  className="rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-white/[0.05] hover:text-foreground"
+                  className="rounded-xl px-4 py-3 text-sm font-medium text-muted-foreground transition-colors hover:bg-foreground/[0.05] hover:text-foreground"
                 >
                   {link.label}
                 </Link>

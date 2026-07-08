@@ -95,7 +95,7 @@ export default function About() {
           </div>
 
           {/* Quote */}
-          <div className="mt-8 flex gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+          <div className="mt-8 flex gap-4 rounded-2xl border border-foreground/10 bg-foreground/[0.03] p-5">
             <Quote className="size-6 shrink-0 text-blue-400" />
             <p className="text-sm italic leading-relaxed text-foreground/90">
               I believe in writing clean code, creating seamless user
@@ -109,8 +109,8 @@ export default function About() {
         <div className="mt-16 grid gap-5 sm:grid-cols-2">
           {values.map((v, i) => (
             <Reveal key={v.title} delay={i * 0.06}>
-              <Card className="flex h-full gap-4 p-6 transition-all hover:-translate-y-1 hover:border-white/20">
-                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-blue-500/10 text-blue-300">
+              <Card className="flex h-full gap-4 p-6 transition-all hover:-translate-y-1 hover:border-foreground/20">
+                <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-300">
                   <v.icon className="size-6" />
                 </span>
                 <div>
@@ -144,12 +144,12 @@ export default function About() {
                       i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                     }`}
                   >
-                    <span className="absolute left-4 top-1.5 z-10 grid h-8 w-8 -translate-x-1/2 place-items-center rounded-full border border-white/15 bg-background text-blue-300 md:left-1/2">
+                    <span className="absolute left-4 top-1.5 z-10 grid h-8 w-8 -translate-x-1/2 place-items-center rounded-full border border-foreground/15 bg-background text-blue-600 dark:text-blue-300 md:left-1/2">
                       <span className="h-2.5 w-2.5 rounded-full bg-blue-500" />
                     </span>
 
                     <div className="ml-12 md:ml-0 md:w-1/2">
-                      <Card className="p-5 transition-all hover:border-white/20">
+                      <Card className="p-5 transition-all hover:border-foreground/20">
                         <Badge variant="accent">{step.phase}</Badge>
                         <h3 className="mt-3 font-semibold">{step.title}</h3>
                         <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
@@ -182,7 +182,7 @@ export default function About() {
                     working toward as I grow into a professional software
                     engineer.
                   </p>
-                  <div className="mt-6 flex items-center gap-4 rounded-2xl border border-white/10 bg-white/[0.03] p-4">
+                  <div className="mt-6 flex items-center gap-4 rounded-2xl border border-foreground/10 bg-foreground/[0.03] p-4">
                     <Layers className="size-6 text-blue-400" />
                     <Server className="size-6 text-blue-400" />
                     <p className="text-sm text-muted-foreground">
@@ -199,7 +199,7 @@ export default function About() {
                       whileInView={{ opacity: 1, x: 0 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: i * 0.08 }}
-                      className="flex items-start gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-4"
+                      className="flex items-start gap-3 rounded-xl border border-foreground/10 bg-foreground/[0.02] p-4"
                     >
                       <CheckCircle2 className="mt-0.5 size-5 shrink-0 text-emerald-400" />
                       <span className="text-sm text-foreground/90">{g}</span>

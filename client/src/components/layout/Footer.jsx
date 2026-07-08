@@ -4,7 +4,7 @@ import { site, navLinks } from "@/data/site";
 export default function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="relative mt-24 border-t border-white/10">
+    <footer className="relative mt-24 border-t border-foreground/10">
       <div className="container py-12">
         <div className="glass rounded-3xl p-8 md:p-10">
           <div className="grid gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
@@ -60,7 +60,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-sm text-muted-foreground sm:flex-row">
+          <div className="mt-10 flex flex-col items-center justify-between gap-3 border-t border-foreground/10 pt-6 text-sm text-muted-foreground sm:flex-row">
             <p>
               © {year} {site.name}. All rights reserved.
             </p>

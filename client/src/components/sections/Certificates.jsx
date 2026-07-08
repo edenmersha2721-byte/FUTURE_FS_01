@@ -46,7 +46,7 @@ export default function Certificates() {
             const hasImage = Boolean(cert.image);
             return (
               <Reveal key={cert.title} delay={i * 0.08}>
-                <Card className="group flex h-full flex-col overflow-hidden transition-all hover:-translate-y-1.5 hover:border-white/20">
+                <Card className="group flex h-full flex-col overflow-hidden transition-all hover:-translate-y-1.5 hover:border-foreground/20">
                   {/* Certificate image / placeholder */}
                   <button
                     type="button"
@@ -56,7 +56,7 @@ export default function Certificates() {
                         ? `View ${cert.title} certificate`
                         : `${cert.title} (no image yet)`
                     }
-                    className={`relative h-44 overflow-hidden border-b border-white/10 ${
+                    className={`relative h-44 overflow-hidden border-b border-foreground/10 ${
                       hasImage ? "cursor-zoom-in" : "cursor-default"
                     }`}
                   >
@@ -76,7 +76,7 @@ export default function Certificates() {
                         </div>
                       </>
                     ) : (
-                      <div className="grid h-full place-items-center bg-white/[0.03]">
+                      <div className="grid h-full place-items-center bg-foreground/[0.03]">
                         <div className="flex flex-col items-center gap-2 text-muted-foreground">
                           <FileImage className="size-8" />
                           <span className="text-xs">Add image in /certificates</span>
@@ -100,7 +100,7 @@ export default function Certificates() {
                       <BadgeCheck className="mt-0.5 size-4 shrink-0 text-emerald-400" />
                       {cert.title}
                     </h3>
-                    <p className="mt-1 text-sm font-medium text-blue-300/90">
+                    <p className="mt-1 text-sm font-medium text-blue-600/90 dark:text-blue-300/90">
                       {cert.issuer}
                     </p>
                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -146,9 +146,9 @@ export default function Certificates() {
                   alt={`${active.title} certificate`}
                   className="max-h-[78vh] w-full object-contain"
                 />
-                <div className="border-t border-white/10 p-4">
+                <div className="border-t border-foreground/10 p-4">
                   <p className="font-semibold">{active.title}</p>
-                  <p className="text-sm text-blue-300/90">
+                  <p className="text-sm text-blue-600/90 dark:text-blue-300/90">
                     {active.issuer} · {active.year}
                   </p>
                 </div>

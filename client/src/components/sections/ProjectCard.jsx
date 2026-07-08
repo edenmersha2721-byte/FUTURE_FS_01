@@ -37,7 +37,7 @@ export default function ProjectCard({ project }) {
     : {};
 
   return (
-    <Card className="group relative flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-white/20">
+    <Card className="group relative flex h-full flex-col overflow-hidden transition-all duration-300 hover:-translate-y-1.5 hover:border-foreground/20">
       {/* Banner: project screenshot, or a gradient fallback */}
       <BannerTag
         {...bannerProps}
@@ -92,10 +92,10 @@ export default function ProjectCard({ project }) {
       {/* Body */}
       <div className="flex flex-1 flex-col p-6">
         <h3 className="text-lg font-semibold tracking-tight">{title}</h3>
-        <p className="mt-0.5 text-sm font-medium text-blue-300/90">{tagline}</p>
+        <p className="mt-0.5 text-sm font-medium text-blue-600/90 dark:text-blue-300/90">{tagline}</p>
 
         {/* Problem solved */}
-        <div className="mt-3 flex flex-1 flex-col rounded-xl border border-white/10 bg-white/[0.02] p-4">
+        <div className="mt-3 flex flex-1 flex-col rounded-xl border border-foreground/10 bg-foreground/[0.02] p-4">
           <p className="text-sm italic leading-relaxed text-muted-foreground">
             &ldquo;{description}&rdquo;
           </p>
@@ -111,13 +111,13 @@ export default function ProjectCard({ project }) {
         </div>
 
         {/* Links */}
-        <div className="mt-5 flex items-center gap-3 border-t border-white/10 pt-4">
+        <div className="mt-5 flex items-center gap-3 border-t border-foreground/10 pt-4">
           {liveUrl ? (
             <a
               href={liveUrl}
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-blue-300"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-colors hover:text-blue-600 dark:hover:text-blue-300"
             >
               <ExternalLink className="size-4" /> Live Demo
             </a>
